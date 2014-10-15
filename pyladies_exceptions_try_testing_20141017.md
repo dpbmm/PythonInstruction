@@ -26,6 +26,7 @@
  
    2. `IndexError`:
 
+        ```python
         In [84]: lst = ['a', 'b' ,'c']
         
         In [85]: len(lst)
@@ -38,4 +39,42 @@
         ----> 1 lst[4]
         
         IndexError: list index out of range
+        ```
 
+   2. `SyntaxError`:
+
+        ```python
+        In [87]: print lst
+          File "<ipython-input-87-a0a7d679bae6>", line 1
+            print lst
+                    ^
+        SyntaxError: invalid syntax
+        ```
+
+   2. `NameError`:
+
+        ```python
+        In [88]: print(q)
+        ---------------------------------------------------------------------------
+        NameError                                 Traceback (most recent call last)
+        <ipython-input-88-9a2128501b7d> in <module>()
+        ----> 1 print(q)
+        
+        NameError: name 'q' is not defined
+        ```
+
+   2. `KeyError`:
+
+        ```python
+        In [89]: d = {'a': 1, 'b': 3}
+        
+        In [90]: d['c']
+        ---------------------------------------------------------------------------
+        KeyError                                  Traceback (most recent call last)
+        <ipython-input-90-3e4d85f12902> in <module>()
+        ----> 1 d['c']
+        
+        KeyError: 'c'
+        ```
+
+     and many others.
