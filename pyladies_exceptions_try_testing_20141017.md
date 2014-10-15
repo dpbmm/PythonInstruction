@@ -27,12 +27,12 @@
    2. `IndexError`, when a list does not contain the requested index:
 
         ```python
-        In [84]: lst = ['a', 'b' ,'c']
+        In [4]: lst = ['a', 'b' ,'c']
         
-        In [85]: len(lst)
-        Out[85]: 3
+        In [5]: len(lst)
+        Out[5]: 3
         
-        In [86]: lst[4]
+        In [6]: lst[4]
         ---------------------------------------------------------------------------
         IndexError                                Traceback (most recent call last)
         <ipython-input-86-810aaf3c175a> in <module>()
@@ -44,7 +44,7 @@
    2. `SyntaxError`, for all sorts of small formal errors in composing expressions:
 
         ```python
-        In [87]: print lst
+        In [7]: print lst
           File "<ipython-input-87-a0a7d679bae6>", line 1
             print lst
                     ^
@@ -54,7 +54,7 @@
    2. `NameError`, for when an unassigned variable name is called:
 
         ```python
-        In [88]: print(q)
+        In [8]: print(q)
         ---------------------------------------------------------------------------
         NameError                                 Traceback (most recent call last)
         <ipython-input-88-9a2128501b7d> in <module>()
@@ -66,9 +66,9 @@
    2. `KeyError`, for when a dictionary lacks a desired key:
 
         ```python
-        In [89]: d = {'a': 1, 'b': 3}
+        In [9]: d = {'a': 1, 'b': 3}
         
-        In [90]: d['c']
+        In [10]: d['c']
         ---------------------------------------------------------------------------
         KeyError                                  Traceback (most recent call last)
         <ipython-input-90-3e4d85f12902> in <module>()
@@ -79,5 +79,40 @@
 
      and many others.
 
+ 1. You can also write your own, custom exceptions and "raise" them (throw them by design). Here is a simple example:
+
+        In [11]: class CustomException(Exception):
+           ....:     pass # Keep it simple for demonstration purposes: empty class.
+           ....: 
+        
+        In [12]: while True:
+           ....:     n = input('What is your name? ')
+           ....:     if n == 'Olive':
+           ....:         raise CustomException('Garsh, Olive, what are we going to do?')
+           ....:     else:
+           ....:         print('\nHi, {}!'.format(n))
+           ....: 
+        
+        What is your name? Tobi
+        Hi, Tobi!
+        
+        What is your name? Kat
+        Hi, Kat!
+        
+        What is your name? Olive
+        ---------------------------------------------------------------------------
+        CustomException                           Traceback (most recent call last)
+        <ipython-input-92-bb39714cfeb9> in <module>()
+              2     n = input('What is your name? ')
+              3     if n == 'Olive':
+        ----> 4         raise CustomException('Garsh, Olive, what are we going to do?')
+              5     else:
+              6         print('Hi, {}!'.format(n))
+        
+        CustomException: Garsh, Olive, what are we going to do?
+
+   We subclass "CustomException" (or any name of your choice) from the "Exception" class.
+   
+   And note the `raise` keyword, to actually call the exception. 
 
 [end]
