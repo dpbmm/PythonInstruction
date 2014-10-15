@@ -4,7 +4,6 @@
 
  1. Sample `for`-loop.
 
-        ```python
         In [1]: lst = []
         
         In [2]: for i in range(10):
@@ -13,7 +12,6 @@
         
         In [3]: print(lst)
         [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
-        ```
 
  1. Replacing a loop with a comprehension: 
 
@@ -150,28 +148,111 @@
 
  1. Timing differences between comprehensions and `for`-loops.
 
-
 ### Generators and other forms of lazy evaluation
 
  1. What is constructed is not the whole sequence but an object that can produce the sequence bit by bit as needed. Compare the speed of constructing a list:
 
-        ```python
         In [1]: %timeit list(range(10))
         1000000 loops, best of 3: 655 ns per loop
         
         In [2]: %timeit list(range(1000000))
         10 loops, best of 3: 34.7 ms per loop
-        ```python
 
      with the speed of constructing only a generator:
 
-        ```python
         In [3]: %timeit range(10)
         1000000 loops, best of 3: 263 ns per loop
         
         In [4]: %timeit range(1000000)
         1000000 loops, best of 3: 299 ns per loop
-        ```python
+
+ 1. Syntax of the one-liner form ("generator expression"): `(<comprehension-structure)`; successive items are called by `next()`:
+
+        In [5]: gen = (i ** 2 for i in range(10000))
+        
+        In [6]: next(gen)
+        Out[6]: 0
+        
+        In [7]: next(gen)
+        Out[7]: 1
+        
+        In [8]: next(gen)
+        Out[8]: 4
+        
+        In [9]: next(gen)
+        Out[9]: 9
+        
+        In [10]: next(gen)
+        Out[10]: 16
+        
+        In [11]: next(gen)
+        Out[11]: 25
+
+ 1. When the generator is used up, you get `StopIteration` exception.
+
+        In [12]: gen = (i ** 2 for i in range(3))
+        
+        In [13]: next(gen)
+        Out[13]: 0
+        
+        In [14]: next(gen)
+        Out[14]: 1
+        
+        In [15]: next(gen)
+        Out[15]: 4
+        
+        In [16]: next(gen)
+        ---------------------------------------------------------------------------
+        StopIteration                             Traceback (most recent call last)
+        <ipython-input-47-8a6233884a6c> in <module>()
+        ----> 1 next(gen)
+        
+        StopIteration: 
+
+ 1. Shut down a generator manually with `.close()`:
+
+        In [17]: gen = (i ** 2 for i in range(10))
+        
+        In [18]: gen.close()
+        
+        In [19]: next(gen)
+        ---------------------------------------------------------------------------
+        StopIteration                             Traceback (most recent call last)
+        <ipython-input-40-8a6233884a6c> in <module>()
+        ----> 1 next(gen)
+        
+        StopIteration: 
+
+ 1. More complex generators can be written out as functions, with the `yield` keyword used to produce the value that will be returned by `next()`. A simple example:
+
+        In [20]: def gen(n):
+           ....:     for i in range(n):
+           ....:         yield i ** 2
+           ....:         
+        
+        In [21]: g = gen(10)
+        
+        In [22]: next(g)
+        Out[22]: 0
+        
+        In [23]: next(g)
+        Out[23]: 1
+        
+        In [24]: next(g)
+        Out[24]: 4
+        
+        In [25]: next(g)
+        Out[25]: 9
+        
+        In [26]: g.close()
+        
+        In [27]: next(g)
+        ---------------------------------------------------------------------------
+        StopIteration                             Traceback (most recent call last)
+        <ipython-input-77-5f315c5de15b> in <module>()
+        ----> 1 next(g)
+        
+        StopIteration: 
 
 
 [end]
