@@ -2,7 +2,7 @@
 
 ## Outline: Exceptions, Try-Except Blocks, and Testing
 
-### Exceptions. 
+### Exceptions
 
  1. An "exception" is an error detected during execution of a program.
 
@@ -113,6 +113,18 @@
 
    We subclass "CustomException" (or any name of your choice) from the "Exception" class.
    
-   And note the `raise` keyword, to actually call the exception. 
+   And note the `raise` keyword, to actually call the exception. When the exception is raised, program execution ends and whatever code is in the class definition gets run. 
+   
+   This time we had only `pass`, so nothing was run. You can also specify an error message whenever you raise the exception.
+   
+   You can raise any error you like, at will, also with a custom message:
+
+        In [13]: raise SyntaxError('Your syntax are lousy.')
+          File "<string>", line unknown
+        SyntaxError: Your syntax are lousy.
+
+### Try-Except blocks
+
+ 1. 
 
 [end]
