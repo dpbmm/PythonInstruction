@@ -1,8 +1,24 @@
-## PyLadies Intermediate Python class, 20141017
+# PyLadies Intermediate Python class, 20141017
 
-### Review of loops: `for`, `while`. 
+## Outline: Comprehensions, Timing, and Generators
 
- 1. Sample `for`-loop.
+### Loops: `while`, `for`. 
+
+ 1. Sample `while`-loop:
+
+        In [1]: lst = []
+        
+        In [2]: i = 0
+        
+        In [3]: while i < 10:
+           ...:     lst.append(i)
+           ...:     i += 1
+           ...:     
+        
+        In [4]: print(lst)
+        [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+
+ 1. The same result with a `for`-loop:
 
         In [1]: lst = []
         
