@@ -148,9 +148,9 @@
 
  1. Timing differences between comprehensions and `for`-loops.
 
-### Generators and other forms of lazy evaluation
+### Generators: "lazy" evaluation
 
- 1. What is constructed is not the whole sequence but an object that can produce the sequence bit by bit as needed. Compare the speed of constructing a list:
+ 1. What is constructed is not the whole sequence but an object that can produce the sequence bit by bit as needed ("lazilly"). Consider the speed of constructing a list — it varies depending on the size of the list:
 
         In [1]: %timeit list(range(10))
         1000000 loops, best of 3: 655 ns per loop
@@ -158,13 +158,15 @@
         In [2]: %timeit list(range(1000000))
         10 loops, best of 3: 34.7 ms per loop
 
-     with the speed of constructing only a generator:
+     Compare that with the speed of constructing only a generator:
 
         In [3]: %timeit range(10)
         1000000 loops, best of 3: 263 ns per loop
         
         In [4]: %timeit range(1000000)
         1000000 loops, best of 3: 299 ns per loop
+
+     Generators take almost the same amount of time regardless of the size.
 
  1. Syntax of the one-liner form ("generator expression"): `(<comprehension-structure)`; successive items are called by `next()`:
 
