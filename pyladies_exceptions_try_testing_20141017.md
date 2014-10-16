@@ -119,12 +119,103 @@
    
    You can raise any error you like, at will, also with a custom message:
 
-        In [13]: raise SyntaxError('Your syntax are lousy.')
+        In [13]: raise SyntaxError('Youre syntax are okay but youre spelling and grammer needs work.')
           File "<string>", line unknown
-        SyntaxError: Your syntax are lousy.
+        SyntaxError: Youre syntax are okay but youre spelling and grammer needs work.
 
 ### Try-Except blocks
 
- 1. 
+ 1. When an exception is "thrown", you can "catch" it and avoid having the program end if you so choose. For this you use a `try`-`except` block.
+
+   Consider the following case:
+
+        In [14]: d = {'a': 1, 'b': 2, 'c': 3}
+        
+        In [15]: keys = {'a', 'b', 'c', 's', 't', 'u', 'v', 'w'}
+        
+        In [16]: for item in keys:
+           .....:     print(d[item])
+           .....:     
+        3
+        ---------------------------------------------------------------------------
+        KeyError                                  Traceback (most recent call last)
+        <ipython-input-117-7f7bd8319877> in <module>()
+              1 for item in keys:
+        ----> 2     print(d[item])
+              3 
+        KeyError: 'v'
+
+   Below we catch the `KeyError` exception in a `try`-`except` block:
+
+        In [17]: for item in keys:
+           .....:     try:
+           .....:         print(d[item])
+           .....:     except KeyError:
+           .....:         print("Shucks, key '{}' isn't in this dictionary.".format(item))
+           .....:         
+        3
+        Shucks, key 'v' isn't in this dictionary.
+        Shucks, key 's' isn't in this dictionary.
+        Shucks, key 'u' isn't in this dictionary.
+        1
+        Shucks, key 't' isn't in this dictionary.
+        Shucks, key 'w' isn't in this dictionary.
+        2
+
+   It's considered best if only a single line of code appears within the `try` block, so that you can be very sure where any exception is being thrown.
+
+ 1. You don't actually need to specify the exception in the `except` block — you can just include the recovery code and it will be run no matter what exception is thrown:
+
+        In [18]: for item in keys:
+           .....:     try:
+           .....:         print(d[item])
+           .....:     except:
+           .....:         print('Shucks! Trying again...')
+           .....:         
+        3
+        Shucks!
+        Shucks!
+        Shucks!
+        1
+        Shucks!
+        Shucks!
+        2
+
+ 1. The `try` block and the `except` block are mandatory — using one requires the other. But a full `try`-`except` block has two other optional elements: `else` and `finally`. The `else` block is executed after the `try` block *if* there is no exception. The `finally` block is executed last, regardless of whether or not there was an exception. Here is an example:
+
+        In [19]: d = {'a': 1, 'b': 2, 'c': 3}
+        
+        In [20]: keys = ['a', 'b', 'c', 'd', 'e']
+        
+        In [21]: while True:
+           ....:     try:
+           ....:         print(d[random.choice(keys)], end='')
+           ....:     except KeyError:
+           ....:         print('This is the "except" block.', end='')
+           ....:     else:
+           ....:         print(' -- This is the "else" block.', end='')
+           ....:     finally:
+           ....:         print(' This is the "finally" block.')
+           ....:         
+        3 -- This is the "else" block. This is the "finally" block.
+        2 -- This is the "else" block. This is the "finally" block.
+        This is the "except" block. This is the "finally" block.
+        2 -- This is the "else" block. This is the "finally" block.
+        2 -- This is the "else" block. This is the "finally" block.
+        1 -- This is the "else" block. This is the "finally" block.
+        3 -- This is the "else" block. This is the "finally" block.
+        This is the "except" block. This is the "finally" block.
+        3 -- This is the "else" block. This is the "finally" block.
+        1 -- This is the "else" block. This is the "finally" block.
+        ...
+
+ 1. You can have any number of `except` blocks, one after another. You can also check for any number of exceptions in a single `except` expression, assuming you want them handled all the same way:
+
+        except (SyntaxError, IndexError, NameError):
+            print('It could have been one of several exceptions.')
+
+### Testing
+
+
 
 [end]
