@@ -401,6 +401,22 @@
                 lst = generate_random_list(2)
                 assert D.sort(lst, broken=True) == sorted(lst)                          
 
-   The reason for the `if` clause in lines 4-5 is that if we have 
+   Output:
+
+        In [1]: import pytest
+        
+        In [2]: pytest.main()
+        ============================= test session starts ==============================
+        platform darwin -- Python 3.4.2 -- py-1.4.25 -- pytest-2.6.3
+        collected 5 items 
+        
+        test_dubious_sort.py .....
+        
+        =========================== 5 passed in 1.06 seconds ===========================
+        Out[2]: 0
+
+   It looks good. We can run `pytest.main()` a few times, or increase the number of loops in the test functions, but this should do for now.
+
+   Are there other edge cases we haven't tested for?
 
 [end]
