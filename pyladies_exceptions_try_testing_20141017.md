@@ -51,6 +51,8 @@
         SyntaxError: invalid syntax
         ```
 
+     The caret `^` marks the first place where the interpreter notices something wrong; any error is before that spot, and sometimes well before it.
+
    2. `NameError`, for when an unassigned variable name is called:
 
         ```python
@@ -81,35 +83,37 @@
 
  1. You can also write your own, custom exceptions and "raise" them (throw them by design). Here is a simple example:
 
-        In [11]: class CustomException(Exception):
-           ....:     pass # Keep it simple for demonstration purposes: empty class.
-           ....: 
-        
-        In [12]: while True:
-           ....:     n = input('What is your name? ')
-           ....:     if n == 'Olive':
-           ....:         raise CustomException('Garsh, Olive, what are we going to do?')
-           ....:     else:
-           ....:         print('\nHi, {}!'.format(n))
-           ....: 
-        
-        What is your name? Tobi
-        Hi, Tobi!
-        
-        What is your name? Kat
-        Hi, Kat!
-        
-        What is your name? Olive
-        ---------------------------------------------------------------------------
-        CustomException                           Traceback (most recent call last)
-        <ipython-input-92-bb39714cfeb9> in <module>()
-              2     n = input('What is your name? ')
-              3     if n == 'Olive':
-        ----> 4         raise CustomException('Garsh, Olive, what are we going to do?')
-              5     else:
-              6         print('Hi, {}!'.format(n))
-        
-        CustomException: Garsh, Olive, what are we going to do?
+```python
+In [11]: class CustomException(Exception):
+   ....:     pass # Keep it simple for demonstration purposes: empty class.
+   ....: 
+
+In [12]: while True:
+   ....:     n = input('What is your name? ')
+   ....:     if n == 'Olive':
+   ....:         raise CustomException('Garsh, Olive, what are we going to do?')
+   ....:     else:
+   ....:         print('\nHi, {}!'.format(n))
+   ....: 
+
+What is your name? Tobi
+Hi, Tobi!
+
+What is your name? Kat
+Hi, Kat!
+
+What is your name? Olive
+---------------------------------------------------------------------------
+CustomException                           Traceback (most recent call last)
+<ipython-input-92-bb39714cfeb9> in <module>()
+      2     n = input('What is your name? ')
+      3     if n == 'Olive':
+----> 4         raise CustomException('Garsh, Olive, what are we going to do?')
+      5     else:
+      6         print('Hi, {}!'.format(n))
+
+CustomException: Garsh, Olive, what are we going to do?
+```
 
    We subclass "CustomException" (or any name of your choice) from the "Exception" class.
    
