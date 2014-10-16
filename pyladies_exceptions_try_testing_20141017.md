@@ -225,6 +225,6 @@
 
  1. One of the most important principles in building and maintaining working code is the "unit test" — a program that tests the behavior of a meaningfully small unit of code in some other program. One very widespread principle of coding theory calls for code to be developed in tandem with and in response to unit tests for that code. The principle is called "test-driven development" (TDD).
  1. Python has many tools for writing test suites (sets of unit tests). Today I will introduce `pytest`, which is available through `pip`. 
- 1. Imagine we have a program that sorts a list. I've supplied a simple one, `pyladiesort.py`. We don't need to know how it works — we're going to write a unit test to make sure that it works correctly.
+ 1. Imagine we have a program that sorts a list. I've supplied a simple one, `dubious_sort.py`. We don't need to know how it works — we're going to write a unit test to make sure that it works correctly.
 
 [end]
