@@ -128,7 +128,7 @@
         [0, 6, 12, 18, 24]
         ```
 
-     3. Filtering with `if-else`: Syntax: `[... <if-else expression> <for expression>]` (notice the difference).
+     3. Filtering with `if-else`: Syntax: `[... <if-else expression> <for expression>]` (notice the difference from filtering with plain `if`).
 
         ```python
         In [27]: lst1 = []
@@ -166,7 +166,7 @@
 
 ### Generators: "lazy" evaluation
 
- 1. What is constructed is not the whole sequence but an object that can produce the sequence bit by bit as needed ("lazilly"). Consider the speed of constructing a list — it varies depending on the size of the list:
+ 1. What is constructed is not the whole sequence but an object that can produce the sequence bit by bit as needed ("lazily") rather than all at once. Consider the speed of constructing a list — it varies depending on the size of the list:
 
         In [1]: %timeit list(range(10))
         1000000 loops, best of 3: 655 ns per loop
