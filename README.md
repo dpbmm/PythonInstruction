@@ -6,12 +6,17 @@
 
  1. Topics covered:
 
-   2. comprehensions
-   2. timing
-   2. generators
-   2. exceptions
-   2. `try`-`except` blocks
-   2. testing with `pytest`
+   2. File `comprehensions_etc.md`
+
+     3. comprehensions
+     3. timing
+     3. generators
+
+   2. File `exceptions_etc.md`
+
+     3. exceptions
+     3. `try`-`except` blocks
+     3. testing with `pytest`
 
  1. All materials should work with Ipython v. 2. This code runs in Python 3.
 
