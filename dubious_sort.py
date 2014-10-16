@@ -7,7 +7,7 @@
 
 import random
 
-def quicksort(the_list, broken=False):
+def sort(the_list, broken=False):
     '''Quicksort: choose pivot, divide as > or <= pivot; call recursively.'''
     # Recursion returns
     if not the_list:
@@ -27,7 +27,10 @@ def quicksort(the_list, broken=False):
     if broken:
         # Wreck the sort
         random.shuffle(the_list)
+        # In case we accidentally shuffled it into sorted order:
+        while the_list == sorted(the_list):
+            random.shuffle(the_list)
         return the_list
-    return (quicksort(first_half, broken) +
+    return (sort(first_half, broken) +
             list([the_list[0]]) +
-            quicksort(second_half, broken))
+            sort(second_half, broken))
