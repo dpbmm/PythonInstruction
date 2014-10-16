@@ -1,4 +1,4 @@
-# PyLadies Intermediate Python class, 20141017
+# Intermediate Python materials, 20141017
 
 ## Outline: Exceptions, Try-Except Blocks, and Testing
 
