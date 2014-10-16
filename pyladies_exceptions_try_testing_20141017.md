@@ -41,7 +41,7 @@
         IndexError: list index out of range
         ```
 
-   2. `SyntaxError`, for all sorts of small formal errors in composing expressions:
+   2. `SyntaxError`, for all sorts of small formal errors in composing expressions and statements:
 
         ```python
         In [7]: print lst
@@ -209,13 +209,20 @@
         1 -- This is the "else" block. This is the "finally" block.
         ...
 
- 1. You can have any number of `except` blocks, one after another. You can also check for any number of exceptions in a single `except` expression, assuming you want them handled all the same way:
+   To recapitulate:
+   
+   2. If there is no exception, the `try` block, the `else` block, and the `finally` block are executed. 
+   2. If there is an exception and it can be caught by some `except` statement, then the block for that `except` statement is run, followed by the `finally` block. 
+   2. If there is an exception that is not caught by some `except` statement, then program execution ends.
+
+ 1. You can have any number of `except` blocks, one after another. You can also check for any number of exceptions in a single `except` statement, assuming you want them handled all the same way:
 
         except (SyntaxError, IndexError, NameError):
             print('It could have been one of several exceptions.')
 
 ### Testing
 
-
+ 1. One of the most important principles in building and maintaining working code is the "unit test" — a program that tests the behavior of a meaningfully small unit of code in some other program. One very widespread principle of coding theory calls for code to be developed in tandem with and in response to unit tests for that code. The principle is called "test-driven development" (TDD).
+ 1. Python has many tools for writing test suites (sets of unit tests). Today I will introduce `pytest`, which is available through `pip`. 
 
 [end]
