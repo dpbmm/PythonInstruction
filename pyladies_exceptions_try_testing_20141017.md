@@ -225,6 +225,177 @@
 
  1. One of the most important principles in building and maintaining working code is the "unit test" — a program that tests the behavior of a meaningfully small unit of code in some other program. One very widespread principle of coding theory calls for code to be developed in tandem with and in response to unit tests for that code. The principle is called "test-driven development" (TDD).
  1. Python has many tools for writing test suites (sets of unit tests). Today I will introduce `pytest`, which is available through `pip`. 
- 1. Imagine we have a program that sorts a list. I've supplied a simple one, `dubious_sort.py`. We don't need to know how it works — we're going to write a unit test to make sure that it works correctly.
+ 1. Imagine we have a program that sorts a list. I've supplied a simple one, `dubious_sort.py`. We don't need to know how it works — all we need to know is that it contains a function `sort()`, which takes a list as input and returns the list sorted. We can generate a list of random characters and try it out ourselves:
+
+        In [1]: import dubious_sort as D
+        
+        In [2]: import random, string
+        
+        In [3]: lst = [random.choice(string.ascii_lowercase) for i in range(10)]
+        
+        In [4]: lst
+        Out[4]: ['m', 'a', 'f', 't', 'v', 'k', 'd', 'd', 'a', 'd']
+        
+        In [5]: D.sort(lst)
+        Out[5]: ['a', 'a', 'd', 'd', 'd', 'f', 'k', 'm', 't', 'v']
+
+   Based on one look, it seems to work. It also contains a hidden option to allow us to wreck the sort:
+
+        In [6]: D.sort(lst, broken=True)
+        Out[6]: ['d', 't', 'm', 'a', 'v', 'd', 'a', 'd', 'k', 'f']
+
+   Rather than relying on the judgement of our eyes, we're going to write a unit test to make sure that it works correctly under a variety of circumstances.
+
+   I will do this by generating lists of random characters and then sorting them twice — once using the built-in `sorted()` function and once using `dubious_sort.py`. I will then `assert` that the two sorted versions are identical, and Pytest will tell me whether they are or not.
+
+ 1. Pytest tests are placed in a subdirectory `test`, and they need to be named `test_` prepended to the name of the program they are targeting. So we create a file called `test_dubious_sort.py` and put it in the subdirectory `test`. 
+ 1. Inside this file, I import the program I am going to test. Since it is located in the directory above the test program, I modify the Python path so that I can import it easily:
+
+        import os
+        import sys
+        sys.path.append(os.path.join('..'))
+        import dubious_sort as D 
+
+   I want to be able to generate a random list of characters, so I place a function in the file:
+
+        import random
+        import string        
+        
+        def generate_random_list(n):
+            return [random.choice(string.ascii_lowercase) for i in range(n)]
+
+   With this I can generate random lists of any length.
+
+ 1. Now let me write a single unit test, a function beginning `test_`:
+
+        def test_n_10():                  
+            lst = generate_random_list(10)
+            assert D.sort(lst) == sorted(lst)
+
+   What this function does is to generate a ten-character random list, and then `assert` that `dubious_sort.sort()` produces the same list as the built-in `sorted` function. Now I run Pytest: I change into the `test` directory, import `pytest` (which I previously installed using `pip`), and run `pytest`:
+
+        In [1]: cd test
+        /Users/dpb/github_public/PythonInstruction/test
+        
+        In [2]: import pytest
+        
+        In [3]: pytest.main()
+        ============================= test session starts ==============================
+        platform darwin -- Python 3.4.2 -- py-1.4.25 -- pytest-2.6.3
+        collected 1 items 
+        
+        test_dubious_sort.py .
+        
+        =========================== 1 passed in 0.01 seconds ===========================
+        Out[3]: 0
+
+   Pytest reports that it "collected 1 items" — it found one test function in all test programs in the directory. Then it showed the name of the test program, followed by a period. Each period represents one test passed. Finally, it reported a summary of its results: "1 passed in 0.01 seconds" and returned the value 0, which means all tests passed.
+
+ 1. Now let's see what happens if a test fails. We'll write a purposely unsuccessful test:
+
+        def test_fail():                  
+            lst = generate_random_list(10)
+            assert lst == sorted(lst)                                                   
+
+   Here is the output:
+
+        In [4]: pytest.main()
+        ============================= test session starts ==============================
+        platform darwin -- Python 3.4.2 -- py-1.4.25 -- pytest-2.6.3
+        collected 2 items 
+        
+        test_dubious_sort.py .F
+        
+        =================================== FAILURES ===================================
+        __________________________________ test_fail ___________________________________
+        
+            def test_fail():
+                lst = generate_random_list(10)
+        >       assert lst == sorted(lst)
+        E       assert ['f', 'm', 'w...'y', 'f', ...] == ['c', 'f', 'f'...'k', 'm', ...]
+        E         At index 0 diff: 'f' != 'c'
+        
+        test_dubious_sort.py:22: AssertionError
+        ====================== 1 failed, 1 passed in 0.02 seconds ======================
+        Out[4]: 1
+        
+   Pytest found a total of two "items", test functions. You can guess that ".F" means the first test passed and the second test failed. Pytest then lists the test that failed (`test_fail()`) and shows the line that failed — first the line in code, and then the same line with actual values filled in. It names the first place where there was a problem: "At index 0 diff". It reports the line where an exception was thrown, and names the exception as `AssertionError`. Finally, it sums up `1 failed, 1 passed in 0.02 seconds" and returns a value of 1, meaning a failed test.
+
+ 1. Let's comment out `test_fail()` and write some longer tests. I want to test much longer lists, and I want to run those tests many times in each function, rather than just once. Here is the file now:
+
+        import os
+        import sys
+        sys.path.append(os.path.join('..'))
+        import dubious_sort as D
+        import random
+        import string
+        
+        def generate_random_list(n):
+            return [random.choice(string.ascii_lowercase) for i in range(n)]
+        
+        def test_n_10():
+            lst = generate_random_list(10)
+            assert D.sort(lst) == sorted(lst)
+        
+        #def test_fail():
+        #    lst = generate_random_list(10)
+        #    assert lst == sorted(lst)
+         
+        def test_n_100():
+            for i in range(100):
+                lst = generate_random_list(100)
+                assert D.sort(lst) == sorted(lst)
+         
+        def test_n_1000():
+            for i in range(100):
+                lst = generate_random_list(1000)
+                assert D.sort(lst) == sorted(lst)                                           
+
+   These tests generate the following output:
+
+        In [1]: import pytest
+        
+        In [2]: pytest.main()
+        ============================= test session starts ==============================
+        platform darwin -- Python 3.4.2 -- py-1.4.25 -- pytest-2.6.3
+        collected 3 items 
+        
+        test_dubious_sort.py ...
+        
+        =========================== 3 passed in 0.76 seconds ===========================
+        Out[2]: 0
+
+   All good. If we change `dubious_sort.py` at some time in the future, and these tests no longer pass, we will then know that we have broken functionality that used to work. The test suite serves as a check on how we expect our program to function. Of course, in a complex program it is best if functions are designed in a modular way, so that they can be tested individually.
+
+ 1. Now let's test the `broken=True` functionality. This setting should always return a list in other than sorted order. We are asserting that `dubious_sort.sort()` always produces something different from the sorted list, so our assertion contains `!=` where we had `==` earlier:
+
+        def test_broken_n_1000():
+            for i in range(100):
+                lst = generate_random_list(1000)
+                assert D.sort(lst, broken=True) != sorted(lst)
+
+   Output:
+
+        In [1]: import pytest
+        
+        In [2]: pytest.main()
+        ============================= test session starts ==============================
+        platform darwin -- Python 3.4.2 -- py-1.4.25 -- pytest-2.6.3
+        collected 4 items 
+        
+        test_dubious_sort.py ....
+        
+        =========================== 4 passed in 1.08 seconds ===========================
+        Out[2]: 0
+        
+
+   Success. Of course, a list must have no fewer than two elements for this to be possible. This is a special edge case, so let's also write a test with just two-element lists, just to be sure about this edge case.
+
+        def test_broken_n_2():
+            for i in range(100):
+                lst = generate_random_list(2) 
+                assert D.sort(lst, broken=True) == sorted(lst)                          
+
+
 
 [end]
