@@ -262,9 +262,14 @@
         import string        
         
         def generate_random_list(n):
-            return [random.choice(string.ascii_lowercase) for i in range(n)]
+            while True:
+                mess = [random.choice(string.ascii_lowercase) for i in range(n)]
+                # We require at least two distinct elements so that sorting is
+                # meaningful.
+                if len(set(mess)) > 1:
+                    return mess
 
-   With this I can generate random lists of any length.
+   With this I can generate random lists of any length. Note the `if` clause to ensure that sorting is meaningful.
 
  1. Now let me write a single unit test, a function beginning `test_`:
 
@@ -393,9 +398,9 @@
 
         def test_broken_n_2():
             for i in range(100):
-                lst = generate_random_list(2) 
+                lst = generate_random_list(2)
                 assert D.sort(lst, broken=True) == sorted(lst)                          
 
-
+   The reason for the `if` clause in lines 4-5 is that if we have 
 
 [end]
