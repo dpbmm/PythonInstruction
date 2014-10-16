@@ -1,4 +1,4 @@
-# PyLadies Intermediate Python class, 20141017
+# Intermediate Python material, 20141017
 
 ## Outline: Comprehensions, Timing, and Generators
 
