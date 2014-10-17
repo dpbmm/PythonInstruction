@@ -182,7 +182,23 @@
 
 ### How do we measure speed? Timing
 
- 1. Using `timeit` (`%timeit` in Ipython) to find the average time to run a code block.
+ 1. Using `timeit` (`%timeit` in Ipython) to find the average time to run a code block. `timeit` is always followed by a one-liner:
+
+        In [1]: def f(n):
+           ....:     lst = []
+           ....:     for i in range(n):
+           ....:         lst.append(n)
+           ....:         
+        
+        In [2]: def g(n):
+           ....:     lst = [i for i in range(n)]
+           ....:     
+        
+        In [3]: %timeit f(100)
+        100000 loops, best of 3: 9.15 µs per loop
+        
+        In [4]: %timeit g(100)
+        100000 loops, best of 3: 5.34 µs per loop
 
  1. Timing differences between comprehensions and `for`-loops.
 
