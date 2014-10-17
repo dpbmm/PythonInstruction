@@ -2,3 +2,4 @@ gnureadline==6.3.3
 ipython==2.3.0
 py==1.4.25
 pytest==2.6.3
+pyzmq==14.3.1
