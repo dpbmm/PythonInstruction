@@ -40,6 +40,8 @@
         Out[5]: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
         ```
 
+     Notice that you don't need to create an empty list first and you don't need `append` — the whole list is formed, apparently all at once.
+
    2. set-comprehensions
 
         ```python
