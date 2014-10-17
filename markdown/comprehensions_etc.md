@@ -79,8 +79,8 @@
         In [17]: numbers = [1, 2, 3]
         
         In [18]: for i in numbers:
-        ....:     for j in letters:
-        ....:         lst.append((i, j))
+        ....:        for j in letters:
+        ....:            lst.append((i, j))
         ....:         
         
         In [19]: print(lst)
@@ -106,10 +106,10 @@
         In [22]: lst = []
         
         In [23]: for i in range(25):
-        ....:       if i % 6:
-        ....:           continue
-        ....:       else:
-        ....:           lst.append(i)
+        ....:        if i % 6:
+        ....:            continue
+        ....:        else:
+        ....:            lst.append(i)
         ....:      
         
         In [24]: print(lst)
