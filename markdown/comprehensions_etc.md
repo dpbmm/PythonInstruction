@@ -45,7 +45,7 @@
         ```python
         In [6]: s = {i for i in range(10)}
         
-        In [7]: s
+        In [7]: print(s)
         Out[7]: {0, 1, 2, 3, 4, 5, 6, 7, 8, 9}
         ```
 
@@ -67,32 +67,54 @@
         {'c': 3, 'a': 1, 'b': 2}
         ```
 
+   2. tuple-comprehensions
+
+     How would you produce something like `(0, 1, 2, 3, 4, 5, 6, 7, 8, 9)`?
+     
+     You would make a list and then convert it into a tuple:
+
+        ```python
+        In [15]: t= tuple([i for i in range(10)])
+        
+        In [16]: print(t)
+        Out[16]: (0, 1, 2, 3, 4, 5, 6, 7, 8, 9)
+        ```
+
+     If you tried the obvious thing, you would get a surprise:
+
+        ```python
+        In [17]: (i for i in range(10))
+        Out[17]: <generator object <genexpr> at 0x10a8d0ab0>
+        ```
+
+     We'll talk about these "generator expressions" a little later. But anyway, you wouldn't get a tuple expression — at the moment there is no such thing.
+
  1. Nesting
 
    2. nested loops
 
         ```python
-        In [15]: lst = []
+        In [1]: lst = []
         
-        In [16]: letters = ['a', 'b', 'c']
+        In [2]: letters = ['a', 'b', 'c']
         
-        In [17]: numbers = [1, 2, 3]
+        In [3]: numbers = [1, 2, 3]
         
-        In [18]: for i in numbers:
+        In [4]: for i in numbers:
         ....:        for j in letters:
         ....:            lst.append((i, j))
         ....:         
         
-        In [19]: print(lst)
+        In [5]: print(lst)
         [(1, 'a'), (1, 'b'), (1, 'c'), (2, 'a'), (2, 'b'), (2, 'c'), (3, 'a'), (3, 'b'), (3, 'c')]
         ```
 
    2. nested comprehensions
 
         ```python
-        In [20]: lst = [(i, j) for i in numbers for j in letters]
+        In [6]: lst = [(i, j) for i in numbers for j in letters]
         
-        In [21]: print(lst)
+        In [7]: print(lst)
         [(1, 'a'), (1, 'b'), (1, 'c'), (2, 'a'), (2, 'b'), (2, 'c'), (3, 'a'), (3, 'b'), (3, 'c')]
         ```
 
@@ -103,16 +125,16 @@
    2. `if`-blocks and `continue` within a loop
 
         ```python
-        In [22]: lst = []
+        In [8]: lst = []
         
-        In [23]: for i in range(25):
+        In [9]: for i in range(25):
         ....:        if i % 6:
         ....:            continue
         ....:        else:
         ....:            lst.append(i)
         ....:      
         
-        In [24]: print(lst)
+        In [10]: print(lst)
         [0, 6, 12, 18, 24]
 
         ```
@@ -122,34 +144,34 @@
      3. Filtering with `if`: Syntax: `[... <for expression> <if expression>]`.
 
         ```python
-        In [25]: lst = [i for i in range(25) if not i % 6]
+        In [11]: lst = [i for i in range(25) if not i % 6]
         
-        In [26]: print(lst)
+        In [12]: print(lst)
         [0, 6, 12, 18, 24]
         ```
 
      3. Filtering with `if-else`: Syntax: `[... <if-else expression> <for expression>]` (notice the difference from filtering with plain `if`).
 
         ```python
-        In [27]: lst1 = []
+        In [13]: lst1 = []
         
-        In [28]: for i in range(10):
+        In [14]: for i in range(10):
         ....:        if i % 3:
         ....:            lst1.append(i)
         ....:        else:
         ....:            lst1.append(i ** 2)
         ....:      
         
-        In [29]: print(lst1)
+        In [15]: print(lst1)
         [0, 1, 2, 9, 4, 5, 36, 7, 8, 81]
         
-        In [30]: lst2 = [i if i % 3 else i ** 2 for i in range(10)]
+        In [16]: lst2 = [i if i % 3 else i ** 2 for i in range(10)]
         
-        In [31]: print(lst2)
+        In [17]: print(lst2)
         [0, 1, 2, 9, 4, 5, 36, 7, 8, 81]
         
-        In [32]: lst1 == lst2
-        Out[32]: True
+        In [18]: lst1 == lst2
+        Out[18]: True
         ```
 
 ### Reasons for using comprehensions.
