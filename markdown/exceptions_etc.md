@@ -20,7 +20,7 @@
         
         StopIteration: 
 
-   This `StopIteration` is a type of built-in exception — it is "thrown" when something tries to call `next()` on a a generator that has already stopped iterating.
+   This `StopIteration` is a type of built-in exception — it is "thrown" when something tries to call `next()` on a generator that has already stopped iterating.
 
  1. Other examples:
  
