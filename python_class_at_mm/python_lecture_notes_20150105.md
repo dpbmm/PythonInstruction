@@ -3,15 +3,12 @@
 ### Introduction
 
  1. The best language to start learning with.
-    2. readable — not just no strange symbols, but Python culture is a culture of clarity.
-    2. reasonable — since reading code is more harder than writing it, there are tools to make it as painless as possible to understand what code does.
+    2. readable — not just no strange symbols, but Python culture is a culture of clarity;
+    2. reasonable — since reading code is more harder than writing it, there are tools to make it as painless as possible to understand what code does;
     2. extremely well documented, both on-line and in books.
  1. This course will run from scratch, assumes nothing. You do not need any initial set-up other than what is in the course — no IDE, no virtualenv, nothing.
- 1. Use Zed Shaw tutorial, "Learn Python the Hard Way". There is [on-line content](http://learnpythonthehardway.org/book/); textbook and videos will be accessible to you on the `shares` drive: 
- 
-        /Volumes/shares/Training\ Public/Quality\ Assurance/learn_python_the_hard_way
-
- 1. Python is not named after the snake but after [Monty Python](https://www.youtube.com/watch?v=rbEIX1giTho), a very silly English comedy troupe of the 1960s and 70s. In the on-line Python docs there are a lot of silly Monty Python jokes.
+ 1. Use Zed Shaw tutorial, "Learn Python the Hard Way". There is freely available [on-line content](http://learnpythonthehardway.org/book/), although I have purchased the course.
+ 1. Python is not named after the snake but after [Monty Python](https://www.youtube.com/watch?v=rbEIX1giTho), a very silly English comedy troupe of the 1960s and 70s. Guido van Rossum, who created the language, is a Monty Python fan. It has become a tradition for there to be silly Monty Python jokes in documentation and example code.
 
 ### How this class will run
 
@@ -23,18 +20,18 @@
     2. checking your messages, or 
     2. reflecting on the teacher's awful haircut.
 
-   So if we spend an hour together, I expect you to have put three good hours into Python by the next time we meet. You should try to make some time for this every day. 
+   Quality time begins *after* you've done those things, perhaps. So if we spend an hour together, I expect you to have put some three good hours into Python by the next time we meet. You should try to make time for this every day. 
 
-### The first materials
+### The first assignment
 
- 1. Read Section "The Hard Way Is Easier" (pp. 19-22). 
- 1. Heed his warnings! Do exactly what he says. You will get the most out of the class if you do that.
- 1. Actual lesson
+ 1. Read the section "The Hard Way Is Easier" (pp. 19-22). Read it carefully, please.
+ 1. Heed Zed Shaw's warnings! Do exactly what he says. You will get the most out of the class if you do that.
+ 1. What you'll find in an actual lesson
 
     2. "What You Should See" (screen shots of the outcome)
     2. "Study Drills" (more things to do to make sure you understand)
     2. "Common Student Questions"
- 1. For Wednesday, please do the first four "exercises":
+ 1. For this coming Wednesday (7 January, 2015), please do the first four "exercises":
  
     2. "0 The Setup" (pp. 24-30).
     2. "1 A Good First Program" (pp. 32-36).
@@ -43,9 +40,9 @@
 
 ### Basic terminal use
 
- 1. This course comes with a whole [mini-course in how to use a terminal](http://learnpythonthehardway.org/book/appendixa.html), which I know frightens some people. This is a good time to learn the basics, if you haven't already.
- 1. Please find the course and do exercises 1-6 for the next class.
- 1. Basic commands:
+ 1. This course comes with a whole [mini-course in how to use a terminal](http://learnpythonthehardway.org/book/appendixa.html), which I know intimidates some people. This is a good time to learn the basics, if you haven't already.
+ 1. Please locate the course ("Appendix A") within the tutorial materials and do exercises 1-6 for our next meeting on Wednesday (7 January, 2015).
+ 1. Basic commands that are covered:
     2. `pwd`
     2. `mkdir`
     2. `cd`
