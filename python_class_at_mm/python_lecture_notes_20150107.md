@@ -13,6 +13,7 @@
         ```
 mkdir -p a/long/series/of/nested/directories
         ```
+      2. If I enter `pwd`, what is the name of the line that the computer prints in response?
 
  1. Questions from Exercises 1-3
  
