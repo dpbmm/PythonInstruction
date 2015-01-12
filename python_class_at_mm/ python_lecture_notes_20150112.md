@@ -6,7 +6,7 @@
 
      * Explain the error
 
-        ```py
+        ```python
 Traceback (most recent call last):
   File "ex4.py", line 8, in <module>
     average_passengers_per_car = car_pool_capacity / passenger
@@ -88,7 +88,7 @@ while True:
         print "%s\r" % i,
         ```
 
-     * Ask questions about the table of Escape Sequences.
+    * Ask questions about the table of Escape Sequences.
 
 ### Any questions about the command-line material?
 
