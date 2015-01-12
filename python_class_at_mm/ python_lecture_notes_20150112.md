@@ -76,11 +76,11 @@ print formatter % (
 
  * [Exercise 10: What Was That?](http://learnpythonthehardway.org/book/ex10.html)
 
-     * What is escaping?
-     * How do you print a literal `\`?
-     * How do you print a tab?
-     * How do you make a string of ten tabs?
-     * Did you try this, and what happened?
+    * What is escaping?
+    * How do you print a literal `\`?
+    * How do you print a tab?
+    * How do you make a string of ten tabs?
+    * Did you try this, and what happened?
 
         ```python
 while True:
