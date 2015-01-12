@@ -57,14 +57,14 @@ NameError: name 'car_pool_capacity' is not defined
 
      * Explain the output of 
 
-        ```python
+          ```python
 print formatter % (
         "I had this thing.",
-				"That you could type up right.",
+	"That you could type up right.",
         "But it didn't sing.",
         "So I said goodnight."
         )
-        ```
+          ```
 
      * Explain why the print statement above can cross so many lines.
 
