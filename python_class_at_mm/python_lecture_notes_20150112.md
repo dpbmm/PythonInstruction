@@ -42,7 +42,7 @@ NameError: name 'car_pool_capacity' is not defined
  * [Exercise 7: More Printing](http://learnpythonthehardway.org/book/ex7.html)
 
      * What happens if you multiply a string by a number?
-     * What happens if you remove the comma at the end of the second-to-last line.
+     * What happens if you remove the comma at the end of the second-to-last line of the code in this exercise?
 
  * [Exercise 8: Printing, Printing](http://learnpythonthehardway.org/book/ex8.html)
 
