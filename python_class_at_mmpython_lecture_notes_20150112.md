@@ -109,7 +109,7 @@ while True:
 
 ### Work due next time (20150114) in the command-line crash-course
 
- * [Exercise 12: View a File (`less`, MORE)](http://learnpythonthehardway.org/book/appendix-a-cli/ex12.html)
+ * [Exercise 12: View a File (`less`, `more`)](http://learnpythonthehardway.org/book/appendix-a-cli/ex12.html)
  * [Exercise 13: Stream a File (`cat`)](http://learnpythonthehardway.org/book/appendix-a-cli/ex13.html)
  * [Exercise 14: Removing a File (`rm`)](http://learnpythonthehardway.org/book/appendix-a-cli/ex14.html)
  * [Exercise 15: Exiting Your Terminal (`exit`)](http://learnpythonthehardway.org/book/appendix-a-cli/ex15.html)
