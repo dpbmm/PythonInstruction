@@ -29,7 +29,7 @@ NameError: name 'car_pool_capacity' is not defined
          * `a1 = 'Zed Shaw'`
          * `1a = 'Zed Shaw'`
          * `_1a = 'Zed Shaw'`
-         * `_ 'Zed Shaw'`
+         * `_ = 'Zed Shaw'`
          * `__1a = 'Zed Shaw'`
 
  * [Exercise 6: Strings And Text](http://learnpythonthehardway.org/book/ex6.html)
