@@ -7,10 +7,10 @@
      * Explain the error
 
         ```py
-Traceback (most recent call last):
-  File "ex4.py", line 8, in <module>
-    average_passengers_per_car = car_pool_capacity / passenger
-NameError: name 'car_pool_capacity' is not defined
+        Traceback (most recent call last):
+          File "ex4.py", line 8, in <module>
+            average_passengers_per_car = car_pool_capacity / passenger
+        NameError: name 'car_pool_capacity' is not defined
         ```
 
      * I used 4.0 for space_in_a_car, but is that necessary? What happens if it's just 4?
@@ -58,12 +58,12 @@ NameError: name 'car_pool_capacity' is not defined
      * Explain the output of 
 
         ```python
-print formatter % (
+        print formatter % (
 		"I had this thing.",
-        "That you could type up right.",
-        "But it didn't sing.",
-        "So I said goodnight."
-        )
+        	"That you could type up right.",
+        	"But it didn't sing.",
+        	"So I said goodnight."
+        	)
         ```
 
      * Explain why the print statement above can cross so many lines.
@@ -83,9 +83,9 @@ print formatter % (
      * Did you try this, and what happened?
 
         ```python
-while True:
-    for i in ["/","-","|","\\","|"]:
-        print "%s\r" % i,
+        while True:
+            for i in ["/","-","|","\\","|"]:
+                print "%s\r" % i,
         ```
 
      * Ask questions about the table of Escape Sequences.
