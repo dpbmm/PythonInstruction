@@ -7,10 +7,10 @@
      * Explain the error
 
         ```python
-Traceback (most recent call last):
-  File "ex4.py", line 8, in <module>
-    average_passengers_per_car = car_pool_capacity / passenger
-NameError: name 'car_pool_capacity' is not defined
+        Traceback (most recent call last):
+          File "ex4.py", line 8, in <module>
+            average_passengers_per_car = car_pool_capacity / passenger
+        NameError: name 'car_pool_capacity' is not defined
         ```
 
      * I used 4.0 for space_in_a_car, but is that necessary? What happens if it's just 4?
