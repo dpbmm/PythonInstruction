@@ -13,7 +13,7 @@
         NameError: name 'car_pool_capacity' is not defined
         ```
 
-     * I used 4.0 for space_in_a_car, but is that necessary? What happens if it's just 4?
+     * The author says, "I used 4.0 for `space_in_a_car`, but is that necessary? What happens if it's just 4?"
      * Why don't we write `x=100`?
 
  * [Exercise 5: More Variables And Printing](http://learnpythonthehardway.org/book/ex5.html)
@@ -92,7 +92,7 @@
                 print "%s\r" % i,
         ```
 
-     * Ask questions about the table of Escape Sequences.
+     * What are the various things in the [the table of Escape Sequences](http://learnpythonthehardway.org/book/ex10.html#escape-sequences)?
 
 ### Any questions about the command-line material?
 
