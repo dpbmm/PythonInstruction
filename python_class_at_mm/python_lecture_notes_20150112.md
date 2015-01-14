@@ -48,12 +48,16 @@
 
      * What is happening here:
 
+        ```python
         formatter = "%r %r %r %r"
         print formatter % (1, 2, 3, 4)
+        ```
 
      * Explain the output of
 
+        ```python
         print formatter % (formatter, formatter, formatter, formatter)
+        ```
 
      * Explain the output of 
 
