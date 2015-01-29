@@ -13,7 +13,7 @@
      print txt.read
         ```
 
-   * When would is `raw_input` be better than using `argv` to get a filename?
+   * When would `raw_input` be better than using `argv` to get a filename? When would `argv` be better than using `raw_input`?
 
 
  * [Exercise 16: Reading And Writing Files](http://learnpythongthehardway.org/book/ex16.html)
