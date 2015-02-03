@@ -114,7 +114,7 @@ return stuff.split()
        There would perhaps be some infinitesimal savings in time by not assigning the value of `stuff.split()` to a named variable. The main reason to do this, though, is that that named variable is never going to be used again. Since it has no use anywhere else in the program, we may as well eliminated it.
     2. The argument `stuff` is sort of abstract. Wouldn't we like to know that a sentence is expected? That would be easier to know if the argument were named `sentence`, as in some of the other functions.
 
- 1.  1. In `print_first_word`:
+ 1. In `print_first_word`:
 
     2. We need a colon after `def print_first_word(words)`.
     2. `poop(0)` should be `pop(0)`
