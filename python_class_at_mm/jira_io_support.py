@@ -15,7 +15,7 @@ def retrieve_bundle(filename='jira_ticket_bundle'):
             try:
                 content = ast.literal_eval(f.read())
             except ValueError, SyntaxError:
-                return
+                return False
         return content
 
 def save_bundle(bundle=None, filename='jira_ticket_bundle'):
@@ -26,7 +26,7 @@ def save_bundle(bundle=None, filename='jira_ticket_bundle'):
         # Validate bundle as argument to ast.literal_eval.
         bundle == ast.literal_eval(repr(bundle))
     except ValueError, SyntaxError:
-        return
+        return False
     if bundle:
         with open(filename, 'w') as f:
             f.write(repr(bundle))
