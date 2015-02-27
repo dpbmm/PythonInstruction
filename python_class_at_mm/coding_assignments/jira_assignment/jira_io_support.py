@@ -11,11 +11,11 @@ def retrieve_bundle(filename='jira_ticket_bundle'):
     If the file is not found or is invalid, return None.
     """
     if os.path.exists(filename):
-        with open('jira_ticket_bundle', 'r') as f:
-            try:
+        try:
+            with open('jira_ticket_bundle', 'r') as f:
                 content = ast.literal_eval(f.read())
-            except ValueError, SyntaxError:
-                return False
+        except Exception:
+            return False
         return content
 
 def save_bundle(bundle=None, filename='jira_ticket_bundle'):
@@ -24,8 +24,9 @@ def save_bundle(bundle=None, filename='jira_ticket_bundle'):
     If no bundle is received or bundle is invalid, return None."""
     try:
         # Validate bundle as argument to ast.literal_eval.
-        bundle == ast.literal_eval(repr(bundle))
-    except ValueError, SyntaxError:
+        if not bundle == ast.literal_eval(repr(bundle)):
+            return False
+    except Exception:
         return False
     if bundle:
         with open(filename, 'w') as f:
