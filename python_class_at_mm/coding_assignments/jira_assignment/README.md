@@ -2,6 +2,8 @@
 
 **Due: Part 1: 20150228, midnight EST. Part 2: 20150301, midnight EST. Part 3: Whenever.**
 
+**Goal**: to use lists, dicts, and classes in some non-trivial project.
+
 (Bear in mind that 1 March is St. David's Day. I hope you will wear a leek in your hat in my honor.)
 
 **Advice**
@@ -35,10 +37,8 @@ Specification:
     2. required, a simple identification number
     2. required, a "summary", which is a single line of text
     2. optionally, zero or more assignees (the total number is unlimited, but each of them is unique and is a person's name)
-    2. optionally, a description
     2. optionally, a story-point value
-    2. optionally, a state: either open or closed; "closed" just means "not open"
-    2. optionally, a series of comments; each comment is a line of text.
+    2. optionally, a state: either open or closed; "closed" just means "not open".
 
  1. Functions needed:
  
@@ -88,5 +88,13 @@ A simple JIRA ticket also has
  1. optionally, zero or more child tickets (the total number is unlimited)
 
 Doing this is hard unless you make each ticket an object and include data structures for adding other objects as parents and children.
+
+### For the future
+
+It seems to me tickets ought to have these additional features, too:
+
+ 1. optionally, a description
+ 1. optionally, a reporter, who is the same sort of person as in the list of assignees — but I want to see a person's "reporter" tickets separately from their "assignee" tickets
+ 1. optionally, a series of comments; each comment is a line of text.
 
 [end]
