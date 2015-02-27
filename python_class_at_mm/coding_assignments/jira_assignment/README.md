@@ -87,7 +87,7 @@ A simple JIRA ticket also has
  1. optionally, zero or one parent tickets
  1. optionally, zero or more child tickets (the total number is unlimited)
 
-Doing this is hard unless you make each ticket an object and include data structures for adding other objects as parents and children.
+Doing this is hard unless you make each ticket an object and include data structures for adding other ticket-objects as parents and children.
 
 ### For the future
 
