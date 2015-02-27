@@ -66,7 +66,7 @@ and None."
     
     You'll see that when reading or writing an object for use by `ast.literal_eval`, I wrap the object in `repr()` — this built-in function "returns the canonical string representation of the object," so that it is always suitable to serve as an argument to `ast.literal_eval`.
 
-Other things word considering
+**Other things worth considering**
 
  1. Identification numbers are issued by the system in order — users can't choose numbers or alter numbers after they are issued.
  1. Tickets, once created, can't be deleted.
