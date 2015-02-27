@@ -8,7 +8,7 @@ import ast
 def retrieve_bundle(filename='jira_ticket_bundle'):
     """Read and return a bundle of JIRA tickets.
 
-    If the file is not found or is invalid, return None.
+    If the file is not found, return None; if invalid, return False.
     """
     if os.path.exists(filename):
         try:
@@ -21,7 +21,8 @@ def retrieve_bundle(filename='jira_ticket_bundle'):
 def save_bundle(bundle=None, filename='jira_ticket_bundle'):
     """Save a bundle of JIRA tickets; return filename used.
 
-    If no bundle is received or bundle is invalid, return None."""
+    If no bundle is received, return None; if bundle invalid, return False.
+    """
     try:
         # Validate bundle as argument to ast.literal_eval.
         if not bundle == ast.literal_eval(repr(bundle)):
