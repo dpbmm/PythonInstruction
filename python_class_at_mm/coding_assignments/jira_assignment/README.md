@@ -87,7 +87,7 @@ and None."
 
 ---
 
-### Additional specification for Part 3. 
+### Additional specification for Part 3
 
 A simple JIRA ticket also has
 
