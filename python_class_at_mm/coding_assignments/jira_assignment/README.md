@@ -2,7 +2,7 @@
 
 **Due: Part 1: 20150228, midnight EST. Part 2: 20150301, midnight EST. Part 3: Whenever.**
 
-**Goal**: to use lists, dicts, and classes in some non-trivial project.
+**Goal**: to use basic data structures — especially lists and dicts — intelligently, and to add classes, all in some non-trivial project.
 
 (Bear in mind that 1 March is St. David's Day. I hope you will wear a leek in your hat in my honor.)
 
@@ -36,9 +36,9 @@ Specification:
 
     2. required, a simple identification number
     2. required, a "summary", which is a single line of text
+    2. required, a state: either open or closed; "closed" just means "not open"
     2. optionally, zero or more assignees (the total number is unlimited, but each of them is unique and is a person's name)
-    2. optionally, a story-point value
-    2. optionally, a state: either open or closed; "closed" just means "not open".
+    2. optionally, a story-point value.
 
  1. Functions needed:
  
@@ -67,7 +67,7 @@ and None."
 Other things word considering
 
  1. Identification numbers are issued by the system in order — users can't choose numbers or alter numbers after they are issued.
- 1. Tickets can be closed, but once created they can't be deleted.
+ 1. Tickets, once created, can't be deleted.
  1. New assignees can be added to the system, but after they are added, the system remembers them and they can't be added again.
  1. At this stage, as we just get basic data structures working, we are **not** altering tickets after they are created. That is for Part 2. For now, once created, a ticket persists as it is. So a closed ticket at this stage will have been created closed.
 
@@ -75,9 +75,9 @@ Other things word considering
 
  1. Add these functions:
 
-    2. Function to add various information to an existing ticket, given the ticket number. So a ticket that was created without an assignee can have one added now.
+    2. Function to add assorted information to an existing ticket, given the ticket number. So a ticket that was created without an assignee can have one added now.
     2. Function to change a ticket from open to closed and vice versa, given the ticket number.
-    2. Function to alter any of the other information in a ticket, given the ticket number. It should be possible to do this over and over again for the same ticket.
+    2. Function to alter any of the information in a ticket, given the ticket number. It should be possible to do this over and over again for the same ticket.
     2. Function to de-assign any ticket from an assignee, given just the assignee-name — if we don't know the ticket number at first, then we need to find out all the tickets that assignee has, and finally pick one to de-assign. Question (don't do this now): suppose we wanted to de-assign any number of tickets from an assignee at once — how would that complicate the situation?
 
 ### Additional specification for Part 3. 
@@ -93,8 +93,11 @@ Doing this is hard unless you make each ticket an object and include data struct
 
 It seems to me tickets ought to have these additional features, too:
 
- 1. optionally, a description
+ 1. optionally, a description, which may be longer than the "summary"
  1. optionally, a reporter, who is the same sort of person as in the list of assignees — but I want to see a person's "reporter" tickets separately from their "assignee" tickets
- 1. optionally, a series of comments; each comment is a line of text.
+ 1. optionally, a series of comments; each comment is a piece of text. Adding a comment doesn't delete any others. And of course, all comments should be editable.
+ 1. optionally, a way of viewing the history of a ticket — what was added, what was altered, and when, and by whom?
+
+Think about what sorts of complications adding these things might bring to your code.
 
 [end]
