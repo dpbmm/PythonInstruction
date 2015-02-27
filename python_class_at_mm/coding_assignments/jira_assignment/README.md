@@ -83,6 +83,7 @@ and None."
     2. Function to change a ticket from open to closed and vice versa, given the ticket number.
     2. Function to alter any of the information in a ticket, given the ticket number. It should be possible to do this over and over again for the same ticket.
     2. Function to de-assign any ticket from an assignee, given just the assignee-name — if we don't know the ticket number at first, then we need to find out all the tickets that assignee has, and finally pick one to de-assign. Question (don't do this now): suppose we wanted to de-assign any number of tickets from an assignee at once — how would that complicate the situation?
+    2. Can we have a `main` function that ties everything together and continues interacting with the user until... until when?
 
 ---
 
