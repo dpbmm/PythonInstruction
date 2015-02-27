@@ -46,7 +46,7 @@ Specification:
     2. Function to report all the information in a ticket, given the ticket number.
     2. Function to report all the tickets an assignee has, given the assignee's name.
 
- 1. In addition, you need two functions to store the "bundle" of tickets to disk so that you don't lose them each time your program ends. I've written these for you. (If you find a serious error in them, you may win a prize.) They are in a file called `jira_io_support.py`: 
+ 1. In addition, you need two functions to store the "bundle" of tickets to disk so that you don't lose them each time your program ends. I've written these for you. (If you find a serious error in them, you may win a prize.) They are in a file called `jira_io_support.py`, located : 
 
     2. `save_bundle`: Function to store the collection of tickets to disk, so you don't lose them when the program ends.
     2. `retrieve_bundle`: Function to retrieve the collection of stored tickets on disk, if it exists.
