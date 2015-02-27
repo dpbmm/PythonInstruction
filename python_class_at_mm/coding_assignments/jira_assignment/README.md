@@ -60,7 +60,7 @@ expression. The string or node provided may only consist of the following
 Python literal structures: strings, numbers, tuples, lists, dicts, booleans,
 and None."
 
-    So you can see what data structures are available for you to work with. But you'll also see, if you read the code, that I've wrapped the call to `ast.literal_eval` in a `try`-`except` block, so that if it fails, it fails silently. That means if you are trying to save or retrieve invalid data, the functions will pass `False` (rather than `None`), and you'll have to remember to look at your data more closely.
+    So you can see what data structures are available for you to work with. But you'll also see, if you read the code, that I've wrapped the call to `ast.literal_eval` in a `try`-`except` block, so that if it fails, it fails without an explicit error, although the function then returns `False` (rather than `None`. That means if you are trying to save or retrieve invalid data, you'll be getting `False` back from the function and you'll have to remember to look at your data more closely.
     
     You'll see that when reading or writing an object for use by `ast.literal_eval`, I wrap the object in `repr()` — this built-in function "returns the canonical string representation of the object," so that it is always suitable to serve as an argument to `ast.literal_eval`.
 
