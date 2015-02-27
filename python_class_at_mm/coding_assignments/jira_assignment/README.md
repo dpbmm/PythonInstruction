@@ -26,6 +26,8 @@ There are three parts to this assignment.
 
 **Part 3**: If and only if Part 2 works as specified, then rewrite it as a class, with some added functionality as described below. If you get to this assignment before we meet, then great! Otherwise, if we have time, we'll do it together in class, or you'll continue to do it as a collaborative assignment for a future class meeting.
 
+---
+
 #### Part 1
 
 Part 1 is only for basic sketching of functionality — it is not a finished program. The functions here should be called one at a time from Ipython or the Python interpreter. Don't bother involving the command line right now.
@@ -71,7 +73,9 @@ Other things word considering
  1. New assignees can be added to the system, but after they are added, the system remembers them and they can't be added again.
  1. At this stage, as we just get basic data structures working, we are **not** altering tickets after they are created. That is for Part 2. For now, once created, a ticket persists as it is. So a closed ticket at this stage will have been created closed.
 
-### Additional specification for Part 2. 
+---
+
+### Additional specification for Part 2
 
  1. Add these functions:
 
@@ -79,6 +83,8 @@ Other things word considering
     2. Function to change a ticket from open to closed and vice versa, given the ticket number.
     2. Function to alter any of the information in a ticket, given the ticket number. It should be possible to do this over and over again for the same ticket.
     2. Function to de-assign any ticket from an assignee, given just the assignee-name — if we don't know the ticket number at first, then we need to find out all the tickets that assignee has, and finally pick one to de-assign. Question (don't do this now): suppose we wanted to de-assign any number of tickets from an assignee at once — how would that complicate the situation?
+
+---
 
 ### Additional specification for Part 3. 
 
@@ -88,6 +94,8 @@ A simple JIRA ticket also has
  1. optionally, zero or more child tickets (the total number is unlimited)
 
 Doing this is hard unless you make each ticket an object and include data structures for adding other ticket-objects as parents and children.
+
+---
 
 ### For the future
 
