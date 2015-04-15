@@ -54,7 +54,7 @@ Most of the talks are now on line; a few very good ones were not recorded, thoug
  * [David Beazley — Modules and Packages: Live and Let Die!](https://www.youtube.com/watch?v=0oTh1CXRaQ0)
  * [David Beazley — Python Concurrency From the Ground Up: LIVE!](https://www.youtube.com/watch?v=MCs5OvhV9S4)
  * [Raymond Hettinger — Super considered super!](https://www.youtube.com/watch?v=EiOglTERPEo)
- * [Raymond Hettinger — Beyond PEP 8 — Best practices for beautiful intelligible code](https://www.youtube.com/watch?v=wf-BqAjZb8M)
+ * [Raymond Hettinger — Beyond PEP 8: Best practices for beautiful intelligible code](https://www.youtube.com/watch?v=wf-BqAjZb8M)
  * [Ned Batchelder — Facts and Myths about Python names and values](https://www.youtube.com/watch?v=_AEJHKGk9ns)
 
 ### Other miscellaneous topics of interest
@@ -67,8 +67,8 @@ Most of the talks are now on line; a few very good ones were not recorded, thoug
  * [Dan Tracy — Ship it: Deployments with Pip](https://www.youtube.com/watch?v=aD2CfKQB5xM) 
  * [Mike Müller — Descriptors and Metaclasses — Understanding and Using Python's More Advanced Features](https://www.youtube.com/watch?v=v2WTVCyTYMw)
  * [David Baumgold — Advanced Git](https://www.youtube.com/watch?v=4EOZvow1mk4)
- * [Jake VanderPlas — Losing your Loops Fast Numerical Computing with NumPy ](https://www.youtube.com/watch?v=EEUXKG97YRw)
- * [https://www.youtube.com/watch?v=igJTEugHozM](https://www.youtube.com/watch?v=igJTEugHozM)
+ * [Jake VanderPlas — Losing your Loops: Fast Numerical Computing with NumPy ](https://www.youtube.com/watch?v=EEUXKG97YRw)
+ * [Michael Scherer — Ansible beyond YAML](https://www.youtube.com/watch?v=igJTEugHozM)
  * [Philip James, Asheesh Laroia — Type python, press enter. What happens?](https://www.youtube.com/watch?v=XVhSjZYwZJo)
  * [Richard Jones — Introduction to game programming with Kivy](https://www.youtube.com/watch?v=U14P8gtjQmU)
 
