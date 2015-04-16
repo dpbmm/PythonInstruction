@@ -6,12 +6,12 @@ The big news in Python development is the introduction of a non-binding system o
 
 I attended the two tutorials on Scikit-Learn, the one on Pyspark, and the one on the mobile framework Kivy. I had a great deal of trouble with packages and environments. 
 
- * The Scikit-Learn tutorials recommended the use of Anaconda; I experienced a persistent error, until I eventually installed all the dependencies manually or through `pip`.
+ * The Scikit-Learn tutorials recommended the use of Anaconda; I experienced a persistent error, until I eventually installed all the dependencies manually or through `pip`. That ate up quite a bit of the first tutorial, and I wish the installation instructions had included steps for ensuring that everything was working correctly.
  
-I prepared Vagrantfiles for use with Pyspark and Kivy.
+I prepared my own Vagrantfiles for use with Pyspark and Kivy, and shared them with the instructors.
 
- * The Pyspark Vagrantfile was very useful, and a real education to construct. My sense is that Pyspark may be useful if one absolutely has to use Spark within Python, but for many purposes where parallelism is not required, Scikit-Learn or Pandas would be better.
- * The Kivy Vagrantfile worked correctly until I realized that it would not be easy to display the output, since VirtualBox is hard to get working with X11/Quartz on OS X. Kivy, in addition, seems to require so many dependencies, and their relationships are so brittle, that I think it would be hard to develop for it regularly. Though, of course, if one uses it regularly, configuring the environment probably becomes second-nature.
+ * The Pyspark Vagrantfile turned out to work perfectly, and it was a real education to construct. My sense is that Pyspark may be useful if one absolutely has to use Spark within Python, but for many purposes where parallelism is not required, Scikit-Learn or Pandas would be better tools. Pyspark is kind of clunky.
+ * The Kivy Vagrantfile worked correctly until I realized that it would not be easy to display the graphical output, since X11-forwarding is hard to get working with VirtualBox and X11/Quartz on OS X. Kivy, in addition, seems to require so many dependencies, and their relationships are so brittle, that I think it would be hard to develop for it regularly. Though, of course, if one uses it regularly, configuring the environment probably becomes second-nature.
 
 Most of the talks are now on line; a few very good ones were not recorded, though. Various topics that may be of interest to MediaMath's M/I and QA groups are listed here (I haven't included everything I liked, though). It was striking to me how many talks there were on data science this year.
 
