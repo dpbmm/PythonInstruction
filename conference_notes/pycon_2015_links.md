@@ -4,6 +4,8 @@ The big news in Python development is the introduction of a non-binding system o
 
  * [Guido van Rossum — Type Hints](https://www.youtube.com/watch?v=2wDvzy6Hgxg)
 
+[PEP-483](https://www.python.org/dev/peps/pep-0483/) and [PEP-484](https://www.python.org/dev/peps/pep-0484/) discuss the ideas behind this development, and there is some conversation on Reddit [here](http://www.reddit.com/r/Python/comments/2pveeq/guido_van_rossum_the_theory_of_type_hinting_for/). Type hinting has definite application to testing, and there was a keynote on this subject by Gary Bernhardt, but to my chagrin it doesn't seem to have been recorded.
+
 I attended the two tutorials on Scikit-Learn, the one on Pyspark, and the one on the mobile framework Kivy. I had a great deal of trouble with packages and environments. 
 
  * The Scikit-Learn tutorials recommended the use of Anaconda; I experienced a persistent error, until I eventually installed all the dependencies manually or through `pip`. That ate up quite a bit of the first tutorial, and I wish the installation instructions had included steps for ensuring that everything was working correctly.
