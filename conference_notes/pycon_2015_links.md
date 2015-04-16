@@ -13,7 +13,7 @@ I prepared Vagrantfiles for use with Pyspark and Kivy.
  * The Pyspark Vagrantfile was very useful, and a real education to construct. My sense is that Pyspark may be useful if one absolutely has to use Spark within Python, but for many purposes where parallelism is not required, Scikit-Learn or Pandas would be better.
  * The Kivy Vagrantfile worked correctly until I realized that it would not be easy to display the output, since VirtualBox is hard to get working with X11/Quartz on OS X. Kivy, in addition, seems to require so many dependencies, and their relationships are so brittle, that I think it would be hard to develop for it regularly. Though, of course, if one uses it regularly, configuring the environment probably becomes second-nature.
 
-Most of the talks are now on line; a few very good ones were not recorded, though. Various topics that may be of interest to MediaMath's M/I and QA groups are listed here (I haven't included everything I liked, though):
+Most of the talks are now on line; a few very good ones were not recorded, though. Various topics that may be of interest to MediaMath's M/I and QA groups are listed here (I haven't included everything I liked, though). It was striking to me how many talks there were on data science this year.
 
 ### Testing
 
